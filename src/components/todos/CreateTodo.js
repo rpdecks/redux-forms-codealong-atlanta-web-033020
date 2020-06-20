@@ -23,7 +23,7 @@ class CreateTodo extends Component {
   render() {
     return(
       <div>
-        <form onSubmit={this.handleSubmit(event)}>
+        <form onSubmit={event => this.handleSubmit(event)}>
           <p>
             <label>add todo</label>
             <input type="text" onChange={this.handleChange}
@@ -39,7 +39,7 @@ class CreateTodo extends Component {
 
 const matchDispatchToProps = dispatch => {
   return {
-    addToDo: (formData) => dispatch({
+    addTodo: (formData) => dispatch({
       type: 'ADD_TODO',
       payload: formData
     })
